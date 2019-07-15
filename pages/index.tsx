@@ -1,48 +1,33 @@
 import Link from 'next/Link'
 import React from 'react'
 import styled from '@emotion/styled'
+import posts from '../posts/data.json'
 
 const Grid = styled.div({
   display: 'grid',
   color: 'pink',
 })
 
-type PostType = {
-  id: string
-  pathname: string
-  source: string
-}
-
-type DataType = {
-  query: {
-    posts: PostType[]
-  }
-}
-
-type PropsType = {
-  posts: PostType[]
-}
-
-const Index = ({ ...props }: PropsType) => {
+const Index = () => {
   return (
     <main role="main">
       <h1>Index</h1>
       <Grid>
-        {props.posts.map(post => (
-          <Link key={post.id} href={post.pathname}>
+        {posts.map(post => (
+          <Link
+            as={post.pathname}
+            href={{ pathname: '/post', query: { id: post.id } }}
+            key={post.id}
+          >
             <a>{post.id}</a>
           </Link>
         ))}
-        <Link href="/about">
+        <Link as="/about" href={{ pathname: '/about' }}>
           <a>About</a>
         </Link>
       </Grid>
     </main>
   )
-}
-
-Index.getInitialProps = async ({ query }: DataType) => {
-  return { posts: query.posts }
 }
 
 export default Index

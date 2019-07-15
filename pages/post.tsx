@@ -2,15 +2,10 @@ import styled from '@emotion/styled'
 import Link from 'next/Link'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-
-type DataType = {
-  query: {
-    source: string
-  }
-}
+import posts from '../posts/data.json'
 
 type PropsType = {
-  source: string
+  id: string
 }
 
 const Root = styled.article({})
@@ -58,10 +53,14 @@ const components = {
   root: (props: any) => <Root {...props} />,
 }
 
-const Post = ({ ...props }: PropsType) => {
+const Post = (props: PropsType) => {
+  const post = posts.find(p => p.id === props.id)
+  console.log('props and post is', props, post)
   return (
     <main role="main">
-      <ReactMarkdown renderers={components} source={props.source} />
+      {post != null && (
+        <ReactMarkdown renderers={components} source={post.source} />
+      )}
       <Link href="/">
         <a>Home</a>
       </Link>
@@ -69,8 +68,7 @@ const Post = ({ ...props }: PropsType) => {
   )
 }
 
-Post.getInitialProps = async ({ query }: DataType) => {
-  return { source: query.source }
+Post.getInitialProps = async ({ query }: any) => {
+  return { id: query.id }
 }
-
 export default Post
