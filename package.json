@@ -15,10 +15,32 @@
     "@types/node": "12.6.2",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
+    "chokidar-cli": "1.2.2",
+    "husky": "3.0.0",
+    "lint-staged": "9.1.0",
+    "prettier": "1.18.2",
     "typescript": "3.5.3"
   },
   "scripts": {
     "build": "next build && next export -o build",
-    "dev": "next"
+    "dev": "next",
+    "prebuild": "node prebuild.js",
+    "write": "chokidar \"./posts/**/*.md\" -c \"yarn prebuild\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }
