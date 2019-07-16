@@ -3,11 +3,8 @@ import colors from '../colors'
 import { HeadingRenderer, ListRenderer } from './renderers'
 
 export const Root = styled.article({
-  padding: '2rem',
-})
-
-export const Paragraph = styled.p({
   color: colors.greys[3],
+  padding: '2rem',
 })
 
 export const Img = styled.img({
@@ -43,7 +40,7 @@ export const TextHeading = styled.h4({
   margin: '1rem 0',
 })
 
-export const CallToAction = styled.h5({
+export const CTAHeading = styled.h5({
   color: colors.greys[5],
   fontSize: '1rem',
   fontWeight: 600,
@@ -51,7 +48,7 @@ export const CallToAction = styled.h5({
   margin: '0.5rem 0',
 })
 
-export const Menu = styled.h6({
+export const MenuHeading = styled.h6({
   color: colors.greys[5],
   fontSize: '0.85rem',
   fontWeight: 600,
@@ -95,14 +92,21 @@ export const InlineCode = styled.code({
   padding: '0.1rem 0.5rem',
 })
 
-const headings = [Title, Heading, SubHeading, TextHeading, CallToAction, Menu]
+const headings = [
+  Title,
+  Heading,
+  SubHeading,
+  TextHeading,
+  CTAHeading,
+  MenuHeading,
+]
 
 const components = {
   heading: (props: any) => <HeadingRenderer headings={headings} {...props} />,
   image: (props: any) => <Img {...props} />,
-  paragraph: (props: any) => <Paragraph {...props} />,
   root: (props: any) => <Root {...props} />,
   link: (props: any) => <Anchor {...props} />,
+  linkReference: (props: any) => <Anchor {...props} />,
   blockquote: (props: any) => <BlockQuote {...props} />,
   list: (props: any) => <ListRenderer {...props} />,
   code: (props: any) => <CodeBlock {...props} />,
