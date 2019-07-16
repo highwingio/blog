@@ -14,7 +14,7 @@ const Post = (props: PropsType) => {
   return (
     <main role="main">
       {post != null && (
-        <ReactMarkdown renderers={Components} source={post.source} />
+        <ReactMarkdown renderers={Components} source={post.body} />
       )}
       <Link href="/">
         <a>Home</a>

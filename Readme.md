@@ -13,12 +13,12 @@ watcher (`yarn write`) but I have been known to be wrong from time to time.
 
 ## TODO
 
-- [ ] Export statically
+- [x] Export statically
 - [ ] RSS Feed
 - [ ] Syntax highlighting on code blocks
-- [ ] Front matter
-- [ ] Collection Posts
+- [x] Front matter
+- [x] Collection Posts
 - [ ] Tags
 - [ ] SEO friendly
-- [ ] Nav, Footer, About etc.
+- [x] Nav, Footer, About etc.
 - [ ] Define Workflow (Slack notifications, Peer review, Post Linter, Test Suite)

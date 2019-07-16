@@ -2,6 +2,8 @@ import { CSSObject, Global } from '@emotion/core'
 import React from 'react'
 import App, { Container } from 'next/app'
 import Head from 'next/head'
+import Footer from '../wtf/Footer'
+import Navbar from '../wtf/Navbar'
 
 const STYLES: CSSObject = {
   '*, *::before, *::after': {
@@ -45,7 +47,9 @@ export default class MyApp extends App {
           />
         </Head>
         <Global styles={STYLES} />
+        <Navbar />
         <Component {...pageProps} />
+        <Footer />
       </Container>
     )
   }
