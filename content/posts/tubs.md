@@ -1,8 +1,8 @@
 ---
-author: MK
+author: [BM, MK]
 date: 06/07/2006
+description: Hey there. Try and keep the text length about 80 characters...
 image: https://source.unsplash.com/daily?tubs
-summary: Hey there. Please make the text length here so it's about 80 characters...
 title: Tubs.md
 ---
 
@@ -19,6 +19,15 @@ To be clear, _any_ project naming scheme works in small quantities. Personal pro
 **Branding shifts, products pivot, and companies merge.** Project code names introduce a level of indirection between what `engineers` `build` and the `labels`, URLs, or brands that end users experience. Over a long enough period, these external or superficial changes _will_ happen and risk introducing confusion or just subtle misalignment between form and function. As with software design in general, abstractions can be a powerful tool to [separate concerns](https://en.wikipedia.org/wiki/Separation_of_concerns). Ask yourself: what code changes might be required if your company were to spin off your product or be merged into an acquirer?
 
 With this in mind, how should you choose a naming scheme?
+
+```javascript
+const str = 'string'
+
+function yummyBears() {
+  const boo = 2
+  console.log(str, boo)
+}
+```
 
 ## Rules for a project naming scheme
 

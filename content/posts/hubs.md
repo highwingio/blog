@@ -1,8 +1,8 @@
 ---
-author: MK
+author: [MK]
 date: 06/04/2006
+description: Hey there. Try and keep the text length about 80 characters...
 image: https://source.unsplash.com/daily?hubs
-summary: Hey there. Please make the text length here so it's about 80 characters...
 title: Hubs.md
 ---
 

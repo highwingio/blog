@@ -32,13 +32,18 @@ const HeadingRenderer = (props: any) => {
 }
 
 const ListRenderer = (props: any) => {
-  const { ordered, children } = props
+  const { ordered } = props
   const Comp = ordered ? Ol : Ul
-  const kids = React.Children.toArray(children)
-  const text = kids.reduce(flatten, '')
-  const slug = text.toLowerCase().replace(/\W/g, '-')
-  return <Comp id={slug} {...props} />
+  return <Comp {...props} />
 }
+
+const CodeBlockRenderer = (props: any) => (
+  <CodeBlock>
+    <code className={props.language ? `language-${props.language}` : ''}>
+      {props.value}
+    </code>
+  </CodeBlock>
+)
 
 const Root = styled.article({
   color: colors.greys[3],
@@ -66,7 +71,7 @@ const headings = [
 
 const components = {
   blockquote: (props: any) => <BlockQuote {...props} />,
-  code: (props: any) => <CodeBlock {...props} />,
+  code: (props: any) => <CodeBlockRenderer {...props} />,
   heading: (props: any) => <HeadingRenderer headings={headings} {...props} />,
   image: (props: any) => <StyledImg {...props} />,
   inlineCode: (props: any) => <InlineCode {...props} />,

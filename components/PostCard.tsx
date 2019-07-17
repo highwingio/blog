@@ -4,13 +4,13 @@ import React from 'react'
 import { Anchor, Flex, Grid, Subheading, Text } from './Elements'
 
 export type PostType = {
-  author?: string
+  author?: string[]
   date: string
+  description?: string
   id: string
   image: string
-  pathname: string
-  summary?: string
   title?: string
+  url: string
 }
 
 type PropsType = {
@@ -33,7 +33,7 @@ const PostCard = ({ post, span }: PropsType) => (
     }}
   >
     <NextLink
-      as={post.pathname}
+      as={post.url}
       href={{ pathname: '/post', query: { id: post.id } }}
       passHref
     >
@@ -54,7 +54,7 @@ const PostCard = ({ post, span }: PropsType) => (
           <Grid css={{ gridGap: '0.5rem' }}>
             <Subheading as="h2">{post.title || post.id}</Subheading>
             <Text>{`${post.date} | ${post.author || 'HW'}`}</Text>
-            <Text>{post.summary || ''}</Text>
+            <Text>{post.description || ''}</Text>
           </Grid>
           <Text>Read More...</Text>
         </Flex>

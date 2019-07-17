@@ -5,7 +5,7 @@ module.exports = {
     const contentPathMap = content.reduce(
       (mappers, item) => ({
         ...mappers,
-        [item.pathname]: { page: '/generic', query: { id: item.id } },
+        [item.url]: { page: '/generic', query: { id: item.id } },
       }),
       {},
     )

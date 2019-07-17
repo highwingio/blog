@@ -67,7 +67,7 @@ const Navbar = () => {
           </NavAnchor>
         </NextLink>
         <NextLink as="/blog" href={{ pathname: '/blog' }} passHref>
-          <NavAnchor active={/\/blog/.test(router.route)}>Blog</NavAnchor>
+          <NavAnchor active={/\/blog|/.test(router.route)}>Blog</NavAnchor>
         </NextLink>
         <NavAnchor href="https://imagine-analytics.com/">Careers</NavAnchor>
       </Flex>
