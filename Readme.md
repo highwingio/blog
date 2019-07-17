@@ -1,5 +1,7 @@
 # Blog
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2a913231-0af5-4b33-a972-e09376633675/deploy-status)](https://app.netlify.com/sites/imagine-analytics-eng-blog/deploys)
+
 ## Development
 
 Run `yarn dev` to start the next.js server and open up http://localhost:3000.
@@ -18,7 +20,7 @@ watcher (`yarn write`) but I have been known to be wrong from time to time.
 - [x] Front matter
 - [x] Collection Posts
 - [x] Nav, Footer, About etc.
-- [ ] Deployments
+- [x] Deployments
 - [ ] Syntax highlighting on code blocks
 - [ ] SEO friendly (rss feed as well)
 - [ ] Define Workflow (Slack notifications, Peer review, Post Linter, Test Suite)
