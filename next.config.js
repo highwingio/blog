@@ -1,17 +1,18 @@
-const posts = require('./posts/data.json')
+const content = require('./content/data.json')
 
 module.exports = {
   async exportPathMap() {
-    const postPathMap = posts.reduce(
-      (mappers, post) => ({
+    const contentPathMap = content.reduce(
+      (mappers, item) => ({
         ...mappers,
-        [post.pathname]: { page: '/post', query: { id: post.id } },
+        [item.url]: { page: '/generic', query: { id: item.id } },
       }),
       {},
     )
+    console.log(contentPathMap)
     return {
       '/': { page: '/' },
-      ...postPathMap,
+      ...contentPathMap,
     }
   },
 }
