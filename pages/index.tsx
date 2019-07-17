@@ -16,9 +16,7 @@ import PostCard, { PostCardGrid, PostType } from '../components/PostCard'
 import Spread from '../components/Spread'
 
 // use the top 3 recent posts
-const defaultPosts = data
-  .filter(f => f.date != null && /^posts/.test(f.id))
-  .slice(0, 3)
+const defaultPosts = data.filter(f => f.isPost === true).slice(0, 3)
 
 const Index = () => (
   <Container as="main" css={{ gridGap: '2rem' }} role="main">

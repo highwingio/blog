@@ -4,7 +4,7 @@ import { Container, Grid, Paragraph, Title } from '../components/Elements'
 import PostCard, { PostCardGrid, PostType } from '../components/PostCard'
 
 // Require a "published date" to render a card
-const defaultPosts = data.filter(f => f.date != null && /^posts/.test(f.id))
+const defaultPosts = data.filter(f => f.isPost === true)
 
 const Blog = () => {
   return (

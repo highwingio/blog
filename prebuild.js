@@ -28,7 +28,11 @@ const getContent = (dirname, files = []) => {
       const id = url.replace(/\//, '').replace(/\//g, '-')
       const source = fs.readFileSync(path.join(dir, filename), 'utf-8')
       const parsed = deserialize(frontMatter(source))
-      files = [...files, ...[{ id, url, ...parsed }]]
+      const isPost =
+        parsed.date != null &&
+        parsed.date.toLowerCase() !== 'draft' &&
+        /^posts/.test(id)
+      files = [...files, ...[{ id, url, ...parsed, isPost }]]
     }
   })
   return files
@@ -42,7 +46,7 @@ fs.writeFileSync(output, JSON.stringify(data))
 // -------------------------------------
 // Generate rss feed from posts (only run in production env?)
 
-const rssPosts = data.filter(f => f.date != null && /^posts/.test(f.id))
+const rssPosts = data.filter(f => f.isPost === true)
 
 const rssFeed = new Feed({
   title: 'Feed Title',
