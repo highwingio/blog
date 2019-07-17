@@ -1,4 +1,4 @@
-import NextLink from 'next/Link'
+import NextLink from 'next/link'
 import React from 'react'
 import data from '../content/data.json'
 import {

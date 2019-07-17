@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import NextLink from 'next/Link'
+import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { Anchor, Flex, View } from './Elements'
 

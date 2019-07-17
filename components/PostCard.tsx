@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import NextLink from 'next/Link'
+import NextLink from 'next/link'
 import React from 'react'
 import { Anchor, Flex, Grid, Subheading, Text } from './Elements'
 
