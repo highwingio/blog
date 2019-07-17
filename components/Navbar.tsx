@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 import NextLink from 'next/Link'
 import { useRouter } from 'next/router'
-import { Flex, Link, View } from './Elements'
+import { Anchor, Flex, View } from './Elements'
 
-const NavLink = styled(Link)<{ active?: boolean }>(
+const NavAnchor = styled(Anchor)<{ active?: boolean }>(
   {
     alignItems: 'center',
     display: 'flex',
@@ -50,26 +50,26 @@ const Navbar = () => {
         }}
       >
         <NextLink as="/" href={{ pathname: '/' }} passHref>
-          <NavLink
+          <NavAnchor
             active={router.route === '/'}
             css={{ position: 'absolute', left: 0 }}
           >
             hw
-          </NavLink>
+          </NavAnchor>
         </NextLink>
         <NextLink
           as="/engineering"
           href={{ pathname: '/engineering' }}
           passHref
         >
-          <NavLink active={/\/engineering/.test(router.route)}>
+          <NavAnchor active={/\/engineering/.test(router.route)}>
             Engineering
-          </NavLink>
+          </NavAnchor>
         </NextLink>
         <NextLink as="/blog" href={{ pathname: '/blog' }} passHref>
-          <NavLink active={/\/blog/.test(router.route)}>Blog</NavLink>
+          <NavAnchor active={/\/blog/.test(router.route)}>Blog</NavAnchor>
         </NextLink>
-        <NavLink href="https://imagine-analytics.com/">Careers</NavLink>
+        <NavAnchor href="https://imagine-analytics.com/">Careers</NavAnchor>
       </Flex>
     </View>
   )

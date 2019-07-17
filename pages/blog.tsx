@@ -1,10 +1,10 @@
 import React from 'react'
-import posts from '../posts/data.json'
-import { Container, Grid, Paragraph, Title } from '../wtf/Elements'
-import PostCard, { PostCardGrid, PostType } from '../wtf/PostCard'
+import data from '../content/data.json'
+import { Container, Grid, Paragraph, Title } from '../components/Elements'
+import PostCard, { PostCardGrid, PostType } from '../components/PostCard'
 
 // Require a "published date" to render a card
-const defaultPosts = posts.filter(p => p.date != null)
+const defaultPosts = data.filter(f => f.date != null && /^posts/.test(f.id))
 
 const Blog = () => {
   return (

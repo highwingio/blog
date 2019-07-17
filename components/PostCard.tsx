@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import NextLink from 'next/Link'
 import React from 'react'
-import { Grid, Flex, Heading, Link, Text } from './Elements'
+import { Anchor, Flex, Grid, Subheading, Text } from './Elements'
 
 export type PostType = {
   author?: string
@@ -37,10 +37,10 @@ const PostCard = ({ post, span }: PropsType) => (
       href={{ pathname: '/post', query: { id: post.id } }}
       passHref
     >
-      <Link>
+      <Anchor>
         <Flex
           css={{
-            backgroundColor: 'rgba(0,0,0,0.333)',
+            backgroundColor: 'rgba(0,0,0,0.5)',
             flexDirection: 'column',
             height: '100%',
             justifyContent: 'space-between',
@@ -52,13 +52,13 @@ const PostCard = ({ post, span }: PropsType) => (
           }}
         >
           <Grid css={{ gridGap: '0.5rem' }}>
-            <Heading>{post.title || post.id}</Heading>
+            <Subheading as="h2">{post.title || post.id}</Subheading>
             <Text>{`${post.date} | ${post.author || 'HW'}`}</Text>
             <Text>{post.summary || ''}</Text>
           </Grid>
           <Text>Read More...</Text>
         </Flex>
-      </Link>
+      </Anchor>
     </NextLink>
   </Grid>
 )

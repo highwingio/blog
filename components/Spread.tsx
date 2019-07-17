@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Grid } from '../wtf/Elements'
+import { Grid } from '../components/Elements'
 
 const Spread = styled(Grid)<{ type?: 'imgLeft' | 'imgRight' }>(
   {

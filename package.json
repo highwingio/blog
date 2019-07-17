@@ -27,7 +27,7 @@
     "build": "next build && next export -o build",
     "dev": "next",
     "prebuild": "node prebuild.js",
-    "write": "chokidar \"./posts/**/*.md\" \"./prebuild.js\" --initial -c \"yarn prebuild\""
+    "write": "chokidar \"./content/**/*.md\" \"./prebuild.js\" --initial -c \"yarn prebuild\""
   },
   "husky": {
     "hooks": {

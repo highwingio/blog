@@ -1,22 +1,24 @@
 import NextLink from 'next/Link'
 import React from 'react'
-import posts from '../posts/data.json'
+import data from '../content/data.json'
 import {
+  Anchor,
   BTN,
   Container,
   Grid,
   Img,
-  Link,
   Paragraph,
   Subheading,
   Title,
   View,
-} from '../wtf/Elements'
-import PostCard, { PostCardGrid, PostType } from '../wtf/PostCard'
-import Spread from '../wtf/Spread'
+} from '../components/Elements'
+import PostCard, { PostCardGrid, PostType } from '../components/PostCard'
+import Spread from '../components/Spread'
 
 // use the top 3 recent posts
-const defaultPosts = posts.filter(p => p.date != null).slice(0, 3)
+const defaultPosts = data
+  .filter(f => f.date != null && /^posts/.test(f.id))
+  .slice(0, 3)
 
 const Index = () => (
   <Container as="main" css={{ gridGap: '2rem' }} role="main">
@@ -41,7 +43,7 @@ const Index = () => (
           href={{ pathname: '/engineering' }}
           passHref
         >
-          <Link css={BTN.PRIMARY}>About the Engineering Team</Link>
+          <Anchor css={BTN.PRIMARY}>About the Engineering Team</Anchor>
         </NextLink>
       </View>
     </Spread>
@@ -60,7 +62,7 @@ const Index = () => (
       </PostCardGrid>
       <View css={{ textAlign: 'right', marginTop: '1rem' }}>
         <NextLink as="/blog" href={{ pathname: '/blog' }} passHref>
-          <Link css={BTN.PRIMARY}>View All Blog Posts</Link>
+          <Anchor css={BTN.PRIMARY}>View All Blog Posts</Anchor>
         </NextLink>
       </View>
     </Grid>
@@ -69,9 +71,9 @@ const Index = () => (
       <View css={{ padding: '2rem' }}>
         <Subheading as="h2">Come with work us!</Subheading>
         <Paragraph>Words and stuff about this panel.</Paragraph>
-        <Link href="https://imagine-analytics.com/" css={BTN.PRIMARY}>
+        <Anchor href="https://imagine-analytics.com/" css={BTN.PRIMARY}>
           Careers at HW
-        </Link>
+        </Anchor>
       </View>
       <View>
         <Img
@@ -81,6 +83,29 @@ const Index = () => (
         />
       </View>
     </Spread>
+
+    {process.env.NODE_ENV === 'development' && (
+      <Spread as="section">
+        <View>
+          <Img
+            alt="Styles"
+            responsive
+            src="https://source.unsplash.com/768x768/daily?style"
+          />
+        </View>
+        <View css={{ padding: '2rem' }}>
+          <Subheading as="h2">Styleguide</Subheading>
+          <Paragraph>Only enabled in development.</Paragraph>
+          <NextLink
+            as="/styleguide"
+            href={{ pathname: '/styleguide' }}
+            passHref
+          >
+            <Anchor css={BTN.PRIMARY}>View the Styleguide</Anchor>
+          </NextLink>
+        </View>
+      </Spread>
+    )}
   </Container>
 )
 
