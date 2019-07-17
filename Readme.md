@@ -22,7 +22,7 @@ watcher (`yarn write`) but I have been known to be wrong from time to time.
 - [x] Nav, Footer, About etc.
 - [x] Deployments
 - [ ] Syntax highlighting on code blocks
-- [ ] SEO friendly (rss feed)
+- [x] SEO friendly (rss feed)
 - [ ] Define Workflow (Slack notifications, Peer review, Post Linter, Test Suite)
 - [ ] Add real content
 
