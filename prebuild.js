@@ -6,6 +6,7 @@ const frontMatter = require('front-matter')
 const parseAsDate = require('date-fns/parse')
 const compareDesc = require('date-fns/compare_desc')
 const Feed = require('feed').Feed
+const pkg = require('./package.json')
 
 // -------------------------------------
 // Generate the data.json from ./content
@@ -49,29 +50,22 @@ fs.writeFileSync(output, JSON.stringify(data))
 const rssPosts = data.filter(f => f.isPost === true)
 
 const rssFeed = new Feed({
-  title: 'Feed Title',
-  description: 'This is my personal feed!',
-  id: 'http://example.com/',
-  link: 'http://example.com/',
-  // language: 'en', // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
-  image: 'http://example.com/image.png',
-  favicon: 'http://example.com/favicon.ico',
-  copyright: 'All rights reserved 2013, John Doe',
-  // updated: new Date(2013, 6, 14), // optional, default = today
-  generator: ':metal:', // optional, default = 'Feed for Node.js'
+  author: pkg.author,
+  copyright: `© ${new Date().getFullYear()} Imagine Analytics`,
+  description: pkg.description,
+  favicon: `${pkg.homepage}/favicon.ico`,
   feedLinks: {
-    json: 'https://example.com/json',
-    atom: 'https://example.com/atom',
+    json: `${pkg.homepage}/json`,
+    atom: `${pkg.homepage}/atom`,
   },
-  author: {
-    name: 'John Doe',
-    email: 'johndoe@example.com',
-    link: 'https://example.com/johndoe',
-  },
+  id: pkg.homepage,
+  image: `${pkg.homepage}/apple-touch-icon.png`,
+  link: pkg.homepage,
+  title: pkg.title,
 })
 
 rssPosts.forEach(post => {
-  const { body, date, ...rest } = post
+  const { body, date, isPost, ...rest } = post
   rssFeed.addItem({
     ...rest,
     content: body, // TODO: Need to convert `body` to html or plain text?

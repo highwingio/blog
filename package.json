@@ -1,6 +1,10 @@
 {
-  "name": "blog",
+  "name": "imagine-analytics-engineering",
   "version": "1.0.0",
+  "title": "Imagine Analytics Engineering",
+  "description": "Add a description about this site.",
+  "homepage": "https://engineering.imagine-analytics.com",
+  "author": "Imagine Analytics",
   "license": "MIT",
   "private": true,
   "dependencies": {
