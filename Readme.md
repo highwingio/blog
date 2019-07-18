@@ -21,10 +21,10 @@ watcher (`yarn write`) but I have been known to be wrong from time to time.
 - [x] Collection Posts
 - [x] Nav, Footer, About etc.
 - [x] Deployments
-- [ ] Syntax highlighting on code blocks
+- [x] Syntax highlighting on code blocks
 - [x] SEO friendly (rss feed)
-- [ ] Define Workflow (Slack notifications, Peer review, Post Linter, Test Suite)
 - [ ] Add real content
+- [ ] Define Workflow
 
 ## Future
 
