@@ -93,6 +93,12 @@ export default class Application extends App {
             key="google-font-montserrat"
             rel="stylesheet"
           />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/github.min.css"
+          />
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+          <script>hljs.initHighlightingOnLoad();</script>
         </Head>
         <Global styles={STYLES} />
         <Navbar />
