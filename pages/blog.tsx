@@ -10,7 +10,7 @@ const defaultPosts = data.filter(f => f.isPost === true)
 
 // Page info
 const headDescription = 'Add a description about this page.'
-const headTitle = 'Imagine Analytics Blog'
+const headTitle = 'Highwing Engineering Blog'
 const headUrl = `${pkg.homepage}/blog`
 
 const Blog = () => {

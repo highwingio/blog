@@ -69,7 +69,7 @@ const Index = () => (
       <View css={{ padding: '2rem' }}>
         <Subheading as="h2">Come with work us!</Subheading>
         <Paragraph>Words and stuff about this panel.</Paragraph>
-        <Anchor href="https://imagine-analytics.com/" css={BTN.PRIMARY}>
+        <Anchor href="https://highwing.io/" css={BTN.PRIMARY}>
           Careers at HW
         </Anchor>
       </View>
