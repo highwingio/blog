@@ -1,6 +1,6 @@
 # Blog
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2a913231-0af5-4b33-a972-e09376633675/deploy-status)](https://app.netlify.com/sites/imagine-analytics-eng-blog/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2a913231-0af5-4b33-a972-e09376633675/deploy-status)](https://app.netlify.com/sites/highwing-eng-blog/deploys)
 
 ## Development
 

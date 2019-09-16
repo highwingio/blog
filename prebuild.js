@@ -51,7 +51,7 @@ const rssPosts = data.filter(f => f.isPost === true)
 
 const rssFeed = new Feed({
   author: pkg.author,
-  copyright: `© ${new Date().getFullYear()} Imagine Analytics`,
+  copyright: `© ${new Date().getFullYear()} Highwing`,
   description: pkg.description,
   favicon: `${pkg.homepage}/favicon.ico`,
   feedLinks: {

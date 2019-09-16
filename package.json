@@ -1,10 +1,10 @@
 {
-  "name": "imagine-analytics-engineering",
+  "name": "highwing-engineering-blog",
   "version": "1.0.0",
-  "title": "Imagine Analytics Engineering",
+  "title": "Highwing Engineering",
   "description": "Add a description about this site.",
-  "homepage": "https://engineering.imagine-analytics.com",
-  "author": "Imagine Analytics",
+  "homepage": "https://engineering.highwing.io",
+  "author": "Highwing",
   "license": "MIT",
   "private": true,
   "dependencies": {

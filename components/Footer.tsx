@@ -10,7 +10,7 @@ const Footer = () => (
       <small>
         <span>&copy;&nbsp;</span>
         <span>{new Date().getFullYear()}</span>
-        <span>&nbsp;Imagine Analytics</span>
+        <span>&nbsp;Highwing</span>
       </small>
     </Container>
   </View>
